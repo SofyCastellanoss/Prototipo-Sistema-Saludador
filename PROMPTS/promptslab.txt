@@ -1,0 +1,67 @@
+PROMPTS UTILIZADOS DURANTE LA PRÁCTICA DE LABORATORIO:
+
+Prompt 1:
+En JavaFX quiero un prototipo de un Sistema Saludador. El objetivo es que el estudiante sea saludado por su nombre y mencionando su edad.
+El flujo obligatorio es este, en ese orden:
+1. El estudiante hace clic en el botón "Solicitar saludo".
+2. El sistema solicita nombre, edad, hora, y que especifique si es AM o PM.
+3. El estudiante ingresa lo solicitado y confirma.
+4. El sistema saluda al estudiante por su nombre y menciona su edad.
+Quiero de una vez el prototipo ejecutable, no un diagrama.
+
+Requisitos de implementación:
+- Una sola ventana JavaFX con tres paneles que se alternan (inicio, formulario, resultado). No muestres el formulario hasta que pulsen "Solicitar saludo".
+- Formulario con: TextField para nombre, Spinner o campo numérico para edad (1 a 120), TextField para hora en formato 12h (hh:mm), ComboBox AM/PM.
+- Validar datos antes de saludar (nombre no vacío, hora válida 1-12, minutos 00-59, AM/PM seleccionado). Si hay error, quédate en el formulario y muestra el mensaje.
+- El saludo debe usar el nombre y la edad. Puedes ajustar "Buenos días/tardes/noches" según la hora convertida a 24h (cuidado con 12 AM y 12 PM).
+- Interfaz en español, aspecto limpio (colores, botones principal/secundario).
+- Prefiero TODO en una sola clase JavaFX (Application) para poder copiar y pegar, con main y launch. No hace falta Maven ni FXML si con una clase basta.
+
+Prompt 2:
+Ya sé qué tiene que hacer el sistema. No me armes proyecto Maven ni README.
+Dame SOLO el código JavaFX del prototipo Sistema Saludador, en un único archivo SistemaSaludador.java, listo para copiar y pegar.
+Comportamiento:
+- Pantalla inicial con botón "Solicitar saludo".
+- Al hacer clic, el sistema pide nombre, edad, hora (hh:mm) y AM/PM.
+- Al confirmar, saluda al estudiante por su nombre y menciona su edad.
+- Botones para volver al inicio o pedir otro saludo.
+Incluye validaciones básicas y el armado de la UI en código Java (sin FXML). No expliques teoría: pégame la clase completa.
+
+Prompt 3:
+Crea un prototipo JavaFX Maven del Sistema Saludador para una práctica de laboratorio.
+Caso de uso "Solicitar saludo":
+1) Clic en Solicitar saludo
+2) El sistema pide nombre, edad, hora y AM/PM
+3) El estudiante ingresa los datos
+4) El sistema responde saludando por nombre y mencionando la edad
+Estructura del software:
+- model: datos de la solicitud (nombre, edad, hora, periodo AM/PM)
+- service: validar y generar el texto del saludo
+- controller + FXML: las tres pantallas (inicio, formulario, resultado)
+- App / Launcher para arrancar JavaFX
+- CSS sencillo
+Entrega el código de cada archivo con su ruta. El saludo es el entregable visible; la hora se usa para el momento del día y debe pedirse sí o sí en el formulario.
+
+Prompt 4:
+Necesito un prototipo de escritorio en JavaFX llamado Sistema Saludador.
+Actor: el estudiante.
+Objetivo: ser saludado por su nombre y que el sistema mencione su edad.
+Paso a paso de ejecución:
+1. Al abrir, solo se ve el título y el botón "Solicitar saludo".
+2. Ese clic es el disparador: ahí el sistema solicita nombre, edad, hora y que indique AM o PM.
+3. El estudiante completa el formulario y pulsa Confirmar.
+4. Aparece el resultado: saludo con el nombre y la edad (por ejemplo "¡Buenos días, Sofía. Tienes 18 años.").
+No saltes pantallas. No pongas el formulario en la pantalla inicial. Quiero el código listo para ejecutar.
+
+Prompt 5:
+Hazme en JavaFX el prototipo del Sistema Saludador, copiable en un solo archivo.
+Detalles que no puedes omitir:
+- Tres vistas en un StackPane: panelInicio, panelFormulario, panelResultado (visible/managed).
+- Inicio: título "Sistema Saludador" + texto corto + botón "Solicitar saludo".
+- Formulario: Nombre, Edad (Spinner 1-120 editable), Hora hh:mm, ComboBox AM/PM, label de error, botones Volver y Confirmar.
+- Resultado: el saludo en grande y debajo la edad; botones "Otro saludo" e "Inicio".
+- Validar nombre (mínimo 2 caracteres), edad, hora con regex tipo h:mm o hh.mm, rango 1-12 y minutos 0-59.
+- Convertir a 24 horas: 12 AM -> 0, 12 PM -> 12, PM suma 12.
+- Mensaje: momento del día + nombre + "Tienes N años".
+- Estilo tipo tarjeta blanca, fondo en degradado suave, botón principal color teal.
+Pásame solo esa clase JavaFX completa.
